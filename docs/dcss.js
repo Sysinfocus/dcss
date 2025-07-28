@@ -1,6 +1,6 @@
 const initStyle = `
 *{margin:0;padding:0;box-sizing:border-box;}
-html,body{max-width:100vw;max-height:100vh;width:100%;height:100%;font-family:system-ui,sans-serif;font-size:16px;padding:env(safe-area-inset)}
+html,body{font-family:system-ui,sans-serif;font-size:16px;padding:env(safe-area-inset)}
 input,textarea,select,option,button{font-family:inherit;font-size:inherit}
 `;
 
@@ -24,6 +24,7 @@ const matchStyles = [
     ["p", "padding"],
     ["t", "transform"],
     ["w", "width"],
+    ["z", "z-index"],
 
     ["ac", "align-content"],
     ["ai", "align-items"],
@@ -266,6 +267,8 @@ const initAsPwa = () => {
     addMetaTag('apple-mobile-web-app-capable', 'yes');    
     addMetaTag('apple-mobile-web-app-status-bar-style', 'black-translucent');    
     addMetaTag('apple-mobile-web-app-title', 'YourAppName');
+
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', 'transparent');
 }
 
 initAsPwa();
