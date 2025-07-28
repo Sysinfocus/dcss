@@ -36,6 +36,7 @@ const matchStyles = [
     ["js", "justify-self"],
     ["lh", "line-height"],
     ["ls", "letter-spacing"],
+    ["lt", "list-style"],
     ["mt", "margin-top"],
     ["mb", "margin-bottom"],
     ["ml", "margin-left"],
@@ -176,8 +177,6 @@ const applySM = (label = '', maxWidth = '') => {
     elements = document.querySelectorAll(`[${label}de]`);
     elements.forEach(element => {
         let result = parseDCss(`${label}de`, element);
-
-        console.log(result)
 
         for (let r in spl) {
             const s = result[spl[r]];

@@ -5,9 +5,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Dynamic CSS</title>    
+    <script src="dcss.js" defer></script>
 </head>
 
-<body>
-  <a href="github-spart.html>See a demo of <b>GitHub Spark</b> design using <b>DCSS</b></a>
+<body ds="p:2rem; fs:18px; lh:1.5">
+  <section de="mb:2rem">
+    <h1 ds="fw:normal">Welcome to <b>Sysinfocus Dynamic CSS</b> (DCSS)</h1>
+    <p de="mt:0.5rem; mb:1.5rem">Dynamic CSS (<span dc="code" ds="ff:monospace; fs:0.9rem; b:#ddd; p:0.15rem 0.5rem; br:0.5rem; d:ib; mx:0.25rem">dcss.js</span>) is a lightweight JavaScript utility that enables developers to <b>create and manage inline styles, element-level styles, and CSS classes dynamically</b> using custom HTML attributes. It streamlines styling logic directly in the markup, removing the need for manually updating or managing external stylesheets in fast-paced, component-driven applications. It is similar to <b>Tailwind CSS</b> but more compact with re-usability factor built-in.</p>
+  </section>
+
+  <section>
+    <h3>Features</h3>
+    <ul de="ml:1.25rem">
+      <li><span class="code">dc</span> → <b>Dynamic Class</b>: Define reusable styles as named classes.</li>
+      <li><span class="code">de</span> → <b>Dynamic Element Styles</b>: Apply inline styles scoped to a specific element.</li>
+      <li><span class="code">ds</span> → <b>Dynamic Styles</b>: Insert global styles directly from HTML.</li>
+      <li ds="mt:1rem; lt:n">💡 Also supports <b>responsive breakpoints</b> like <span class="code">lg-ds</span>, <span class="code">xl-ds</span>, etc., for device-based styling!</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>🔥 Why Dynamic CSS?</h3>
+    <p>Traditional CSS can become rigid and unscalable in modern component-driven workflows. `dcss.js` allows developers to:</p>
+    <ul>
+      <li>✅ Style without creating external CSS files</li>
+      <li>✅ Write scoped, atomic styles inline or dynamically</li>
+      <li>✅ Create reusable design tokens using HTML attributes</li>
+      <li>✅ Prototype rapidly and keep style logic near the component</li>
+      <li>✅ Manage responsive styling without media query clutter</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Perfect for</h3>
+    <ul>
+      <li>Single File Components</li>
+      <li>Web Components</li>
+      <li>SPAs and PWAs</li>
+      <li>Prototypes and demos</li>
+      <li>CodePen/JSFiddle playgrounds</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>📦 Installation</h3>
+    <p>Include the script:</p>
+    <span class="code">&lt;script src="dcss.js" defer>&lt;/script></span>
+  </section>
+
+  <section ds="pb:1r">
+    <h3>✨ Samples</h3>
+    <p>See a demo of <a dc="link" ds="td:n; fw:700; c:black; hover c:red" href="github-spark.html">GitHub Spark</a> design using <b ds="fw:700">DCSS</b></p>
+  </section>
 </body>  
 </html>
