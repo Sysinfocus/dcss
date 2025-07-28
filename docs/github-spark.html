@@ -3,14 +3,16 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+    <meta name="theme-color" content="#ffffff">
     <title>GitHub Spark Sample</title>
     <script src="dcss.js" defer></script>
 </head>
 
-<body ds="b:lg(45deg,#39f9,lightyellow,#39f9) fixed no-repeat; bs:cover; xw:100vw; p:2rem; xh:100vh; ff:Geist, sans-serif; tt:200ms ease-in-out">
+<body ds="ff:Geist, sans-serif">
+    <div ds="b:lg(45deg,#39f9,lightyellow,#39f9) fixed no-repeat; bs:cover; nw:100vw; nh:100vh; pn:fd; top:0; left:0; z:-1"></div>
 
-    <div dc="container" ds="d:f; g:2rem" lg-ds="g:3rem" xl-ds="g:6rem">
+    <div dc="container" ds="d:f; p:2rem; g:2rem" lg-ds="g:3rem" xl-ds="g:6rem">
         <div ds="d:f; fd:cm; jc:fs; ai:fs; w:2rem">
             <ion-icon dc="g-logo" ds="fs:2rem; mb:10rem" lg-ds="fs:3rem; mb:13rem" xl-ds="fs:4rem; mb:16rem" name="logo-github"></ion-icon>
             <p ds="tt:uc; o:0.3; fw:500; ls:1px; pt:100%; ws:pre; o:h; t:rotate(-90deg); to:l">GitHub Next</p>
@@ -28,7 +30,10 @@
                 </div>
                 <div>
                     <b class="u-text">Stage</b>
-                    <button ds="b:lightblue; c:royalblue; bd:none; p:0.5rem 0.75rem; br:0.35rem; tt:uc; ls:1px; fs:0.85rem; fw:600">Product</button>
+                    <div ds="d:f; g:0.5rem">
+                        <button onclick="location.reload()" ds="b:lightblue; c:royalblue; bd:none; p:0.5rem 0.75rem; br:0.35rem; tt:uc; ls:1px; fs:0.85rem; fw:600">Reload</button>
+                        <button onclick="history.back()" ds="b:lightblue; c:royalblue; bd:none; p:0.5rem 0.75rem; br:0.35rem; tt:uc; ls:1px; fs:0.85rem; fw:600">Go Back</button>
+                    </div>
                 </div>
                 <div>
                     <b class="u-text">Who made it?</b>

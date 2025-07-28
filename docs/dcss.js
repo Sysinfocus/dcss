@@ -1,6 +1,7 @@
 const initStyle = `
 *{margin:0;padding:0;box-sizing:border-box;}
-html,body{max-width:100vw;max-height:100vh;width:100%;height:100%;font-family:system-ui,sans-serif;font-size:16px;padding:env(safe-area-inset)}
+html{padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom);-webkit-text-size-adjust:100%;}
+body{font-family:system-ui,sans-serif;font-size:16px}
 input,textarea,select,option,button{font-family:inherit;font-size:inherit}
 `;
 
@@ -24,6 +25,7 @@ const matchStyles = [
     ["p", "padding"],
     ["t", "transform"],
     ["w", "width"],
+    ["z", "z-index"],
 
     ["ac", "align-content"],
     ["ai", "align-items"],
@@ -156,8 +158,13 @@ const parseDCss = (type, element) => {
     let lastKey = '';
     clsValues.forEach(cv => {
         const cvs = cv.trim().split(':');
-        let key = cvs[0], value = cvs[1];
-        if (key.indexOf(' ') > 0) {
+        let key = cvs[0], value = cvs[1];        
+
+        const notFound = matchStyles.find(x => x[0] === key);
+        if (!notFound) {
+            style += `${key}:${formatValue(value)};`; 
+            output[''] = style;
+        } else if (key.indexOf(' ') > 0) {
             const splKey = key.split(' ');
             key = splKey[1].trim();
             const result = matchStyles.filter(m => key === m[0] ? m : null)
@@ -165,10 +172,9 @@ const parseDCss = (type, element) => {
             lastKey = splKey[0].trim();
             result.forEach(r => spl += `${r[1]}:${formatValue(value)};`);
             output[splKey[0].trim()] = spl;
-        }
-        else {
-            const result = matchStyles.filter(m => key === m[0] ? m : null)
-            result.forEach(r => style += `${r[1]}:${formatValue(value)};`);
+        } else {
+            const result = matchStyles.filter(m => key === m[0] ? m : null);                
+            result.forEach(r => style += `${r[1]}:${formatValue(value)};`);            
             output[''] = style;
         }
     });
@@ -266,6 +272,8 @@ const initAsPwa = () => {
     addMetaTag('apple-mobile-web-app-capable', 'yes');    
     addMetaTag('apple-mobile-web-app-status-bar-style', 'black-translucent');    
     addMetaTag('apple-mobile-web-app-title', 'YourAppName');
+
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', 'transparent');
 }
 
 initAsPwa();
