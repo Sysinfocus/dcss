@@ -1,8 +1,17 @@
 const initStyle = `
 *{margin:0;padding:0;box-sizing:border-box;}
-html,body{max-width:100dvw;max-height:100dvh;width:100%;height:100%;font-family:system-ui,sans-serif;font-size:16px}
+html,body{max-width:100vw;max-height:100vh;width:100%;height:100%;font-family:system-ui,sans-serif;font-size:16px;padding:env(safe-area-inset)}
 input,textarea,select,option,button{font-family:inherit;font-size:inherit}
 `;
+
+const addMetaTag = (name, content) => {
+    let tag = document.querySelector(`meta[${name}]`);
+    if (tag) return;
+    tag = document.createElement('meta');
+    tag.name = name;
+    tag.content = content;
+    document.querySelector('head').appendChild(tag);
+}
 
 const matchStyles = [
     ["b", "background"],
@@ -248,6 +257,18 @@ const applySM = (label = '', maxWidth = '') => {
     if (label === '') finalStyles.textContent += mq;
     else finalStyles.textContent += mq + `}`;
 }
+
+const initAsPwa = () => {
+    addMetaTag('theme-color', '#ffffff');
+    addMetaTag('description', 'Created using Dynamic CSS!');
+    addMetaTag('mobile-web-app-capable', 'yes');    
+    addMetaTag('application-name', 'YourAppName');    
+    addMetaTag('apple-mobile-web-app-capable', 'yes');    
+    addMetaTag('apple-mobile-web-app-status-bar-style', 'black-translucent');    
+    addMetaTag('apple-mobile-web-app-title', 'YourAppName');
+}
+
+initAsPwa();
 
 applySM();
 applySM('xs', '375px');
