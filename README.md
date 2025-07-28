@@ -40,31 +40,3 @@ Include the script:
 
 ```html
 <script src="dcss.js" defer></script>
-
-
-<!-- ## 📌 Why Dynamic CSS?
-
-In modern web applications, especially **component-based architectures (like Web Components, PWAs, or Vanilla JS UIs)**, managing external CSS files can:
-
-- Introduce **tight coupling** between style and structure.
-- Require additional boilerplate or frameworks.
-- Make **dynamic or conditional styling** cumbersome.
-- Slow down **prototyping and experimentation**.
-
-`dcss.js` solves this by offering:
-
-✅ **Inline convenience + class-level reusability**  
-✅ **No page reloads or style recalculations**  
-✅ **Easy theming and styling in dynamic components**  
-✅ **Full control from HTML**  
-✅ **Clean, readable attributes** like `dc`, `de`, and `ds`.
-
----
-
-## 📦 Installation
-
-Just add the `dcss.js` file to your project and include it:
-
-```html
-<script src="path/to/dcss.js"></script>
- -->
