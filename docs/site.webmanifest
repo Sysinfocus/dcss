@@ -2,7 +2,7 @@
   "name": "Dynamic CSS",
   "short_name": "DCSS",
   "description": "Create web pages with dynamic styling.",
-  "start_url": "",
+  "start_url": "index.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#ffffff",
